@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
   devise_for :psychologists, path: 'psychologists', controller: { session: 'user/session' }
   devise_for :patients, path: 'patients', controller: { session: 'patient/session' }
   devise_for :admins, path: 'admins', controller: { session: 'admin/session' }
