@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :admins, path: 'admins', controller: { session: 'admin/session' }
   root to: 'pages#home'
 
-  resources :mood_befores, only: %i[new create show]   
-  resources :mood_afters, only: %i[new create show]  
+  resources :mood_befores, only: %i[new create show]
+  resources :mood_afters, only: %i[new create show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
