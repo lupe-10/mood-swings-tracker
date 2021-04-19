@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_180554) do
+ActiveRecord::Schema.define(version: 2021_04_19_160623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,16 @@ ActiveRecord::Schema.define(version: 2021_04_18_180554) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birthday"
+    t.string "gender"
+    t.integer "phone_number"
+    t.string "address"
+    t.string "pre_existing_disease"
+    t.bigint "psychologist_id"
     t.index ["email"], name: "index_patients_on_email", unique: true
+    t.index ["psychologist_id"], name: "index_patients_on_psychologist_id"
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
 
@@ -61,4 +70,5 @@ ActiveRecord::Schema.define(version: 2021_04_18_180554) do
     t.index ["reset_password_token"], name: "index_psychologists_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "patients", "psychologists"
 end
