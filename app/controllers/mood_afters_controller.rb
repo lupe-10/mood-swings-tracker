@@ -7,10 +7,11 @@ class MoodAfterController < ApplicationController
 
   def create
     @mood_after = MoodAfter.new(mood_after_params)
-    @mood_after.user = current_user
+    @mood_after.patient = current_user
     #@mood_after.sent = false
     if @mood_after.save
-      redirect_to new_mood_after(@mood_after)
+      redirect_to new_mood_after(@mood_after) 
+      #no hay pantalla por ahora pero debería ser, mood guardado, comeback tomorrow.
     else
       render :new
     end
