@@ -18,7 +18,7 @@ class MoodAfterController < ApplicationController
   private
 
   def mood_after_params
-    params.require(:before_exercise).permit(:anxiety_level, :motivation_level, :mood_level, :cardiac_frequency, :respiratory_rate , :pain, :other_thoughts)
+    params.require(:mood_after).permit(:anxiety_level, :motivation_level, :mood_level, :cardiac_frequency, :respiratory_rate , :pain, :other_thoughts)
   end
 
 end
