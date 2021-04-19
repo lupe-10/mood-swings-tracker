@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_162429) do
+ActiveRecord::Schema.define(version: 2021_04_19_163735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2021_04_19_162429) do
   create_table "mood_befores", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "anxiety_level"
+    t.string "motivation_level"
+    t.string "mood_level"
+    t.string "cardiac_frecuency"
+    t.string "respiratory_rate"
+    t.string "pain"
+    t.text "other_thoughts"
+    t.bigint "patient_id"
+    t.index ["patient_id"], name: "index_mood_befores_on_patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -75,5 +84,6 @@ ActiveRecord::Schema.define(version: 2021_04_19_162429) do
     t.index ["reset_password_token"], name: "index_psychologists_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "mood_befores", "patients"
   add_foreign_key "patients", "psychologists"
 end
