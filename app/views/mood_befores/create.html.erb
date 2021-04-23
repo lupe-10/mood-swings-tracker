@@ -1,0 +1,10 @@
+<%= simple_form_for [ @mood_before, @patient ] do |f| %>
+  <%= f.input :anxiety_level %>
+  <%= f.input :motivation_level %>
+  <%= f.input :mood_level %>
+  <%= f.input :cardiac_frequency %>
+  <%= f.input :respiratory_rate %>
+  <%= f.input :pain %>
+  <%= f.input :other_thoughts %>
+  <%= f.submit "Submit Mood", class: "btn btn-primary" %>
+<% end %>
