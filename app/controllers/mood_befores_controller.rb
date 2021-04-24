@@ -23,7 +23,7 @@ class MoodBeforeController < ApplicationController
   private
 
   def find_mood_before
-    @mood_before = MoodBefore.find(params[:id])
+    @mood_befores = MoodBefore.find(params[:id])
   end
 
   def mood_before_params
