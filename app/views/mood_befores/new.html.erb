@@ -3,7 +3,7 @@
 <%= simple_form_for [ @mood_before, @patient ] do |f| %>
   <%= f.input :anxiety_level %>
   <%= f.input :motivation_level %>
-  <%= f.input :mood_level %>
+  <%= f.input :mood_level, collection: MoodBefore::MOOD_BEFORE, as: :radio_buttons %>
   <%= f.input :cardiac_frequency %>
   <%= f.input :respiratory_rate %>
   <%= f.input :pain %>
