@@ -1,0 +1,13 @@
+<h1 class="text-center p-5 ">Before Sport<br> You can choose <strong>one or more</strong></h1>
+<div class="container">
+<%= simple_form_for [ @mood_after, @patient ] do |f| %>
+  <%= f.input :anxiety_level %>
+  <%= f.input :motivation_level %>
+  <%= f.input :mood_level %>
+  <%= f.input :cardiac_frequency %>
+  <%= f.input :respiratory_rate %>
+  <%= f.input :pain %>
+  <%= f.input :other_thoughts %>
+  <%= f.submit "Submit Mood", class: "btn btn-primary" %>
+<% end %>
+</div>
